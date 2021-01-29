@@ -1,4 +1,4 @@
-package Poker;
+package Poker.Enums;
 
 public enum Result {
     Win,

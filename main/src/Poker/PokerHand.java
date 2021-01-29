@@ -1,5 +1,8 @@
 package Poker;
 
+import Poker.Enums.Result;
+import Poker.Enums.Values;
+
 import java.util.ArrayList;
 
 public class PokerHand {
@@ -67,8 +70,10 @@ public class PokerHand {
     }
 
     public Result compareWith(PokerHand handToCompare){
-        if(value.ordinal()<handToCompare.getValue().ordinal())return Result.Loss;
-        if(value.ordinal()>handToCompare.getValue().ordinal())return Result.Win;
+        int valueLocal=value.ordinal();
+        int valueExt=handToCompare.getValue().ordinal();
+        if(valueLocal<valueExt)return Result.Loss;
+        if(valueLocal>valueExt)return Result.Win;
         return Result.Tie;
     }
 }

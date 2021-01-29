@@ -1,7 +1,6 @@
-import Poker.Card;
 import Poker.PokerHand;
-import Poker.Result;
-import Poker.Values;
+import Poker.Enums.Result;
+import Poker.Enums.Values;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,7 +42,5 @@ public class PokerHand_ {
         assertEquals(Result.Win,pokerHandWithThree.compareWith(pokerHandWithPair));
         assertEquals(Result.Tie,pokerHandWithPair.compareWith(pokerHandWithPair));
         assertEquals(Result.Loss,pokerHandWithThree.compareWith(pokerHandWithPoker));
-
-
     }
 }
