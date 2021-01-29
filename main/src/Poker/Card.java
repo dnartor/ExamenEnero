@@ -66,9 +66,6 @@ public class Card {
         return numValue;
     }
 
-    public String getFigure() {
-        return figure;
-    }
     public String toString(){
         return numValue+figure;
     }
