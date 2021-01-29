@@ -1,16 +1,35 @@
 package Poker;
 
 import Poker.Enums.Numbers;
+import Poker.Enums.Type;
 
 public class Card {
 
     private String numValue;
     private String figure;
     private Numbers number;
+    private Type type;
     public Card(String card){
         numValue=Character.toString(card.charAt(0));
         figure=Character.toString(card.charAt(1));
         setNumber();
+        setType();
+    }
+
+    private void setType() {
+        if ("D".equals(figure)) {
+            type=Type.DIAMONDS;
+        }else if ("S".equals(figure)) {
+            type=Type.SPADES;
+        }else if ("C".equals(figure)) {
+            type=Type.CLUBS;
+        }else if ("H".equals(figure)) {
+            type=Type.HEARTS;
+        }
+    }
+
+    public Type getType() {
+        return type;
     }
 
     private void setNumber() {

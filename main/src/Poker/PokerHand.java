@@ -1,6 +1,7 @@
 package Poker;
 
 import Poker.Enums.Result;
+import Poker.Enums.Type;
 import Poker.Enums.Values;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class PokerHand {
 
     ArrayList<Card> cards=new ArrayList();
     Values value;
+    Boolean sameColor=false;
 
     public PokerHand(String cards) {
         String[] cardsString = cards.split(" ");
@@ -16,6 +18,32 @@ public class PokerHand {
             this.cards.add(new Card(card));
         }
         selfCombination();
+        sameColor=comprobeSameColor();
+        System.out.println(sameColor);
+    }
+
+    public Boolean getSameColor() {
+        return sameColor;
+    }
+
+    private boolean comprobeSameColor() {
+        boolean allRed = true;
+        boolean allBlack = true;
+        for(Card card:cards){
+            if(!card.getType().equals(Type.HEARTS) && !card.getType().equals(Type.DIAMONDS)){
+                allRed=false;
+
+                break;
+            }
+        }
+        for(Card card:cards){
+            if(!card.getType().equals(Type.SPADES) && !card.getType().equals(Type.CLUBS)){
+                allBlack=false;
+
+            }
+        }
+        if(allRed == true || allBlack == true) return true;
+        return false;
     }
 
 

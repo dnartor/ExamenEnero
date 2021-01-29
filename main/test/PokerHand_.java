@@ -14,6 +14,7 @@ public class PokerHand_ {
     private PokerHand pokerHandWithPair;
     private PokerHand pokerHandWithThree;
     private PokerHand pokerHandWithPoker;
+    private PokerHand pokerHandWithColor;
 
 
     @Before
@@ -22,6 +23,7 @@ public class PokerHand_ {
         pokerHandWithPair = new PokerHand("KS KH 2S 4D TD");
         pokerHandWithThree = new PokerHand("KS KH 2S KD TD");
         pokerHandWithPoker = new PokerHand("KS KH 2S KD KD");
+        pokerHandWithColor = new PokerHand("KS KC 1S 1C 2S");
 
     }
     @Test
@@ -42,5 +44,10 @@ public class PokerHand_ {
         assertEquals(Result.Win,pokerHandWithThree.compareWith(pokerHandWithPair));
         assertEquals(Result.Tie,pokerHandWithPair.compareWith(pokerHandWithPair));
         assertEquals(Result.Loss,pokerHandWithThree.compareWith(pokerHandWithPoker));
+    }
+
+    @Test
+    public void comprobeColors(){
+        assertTrue(pokerHandWithColor.getSameColor());
     }
 }
