@@ -1,5 +1,6 @@
 import Poker.Card;
 import Poker.PokerHand;
+import Poker.Result;
 import Poker.Values;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,4 +38,12 @@ public class PokerHand_ {
 
     }
 
+    @Test
+    public void compareWithHands(){
+        assertEquals(Result.Win,pokerHandWithThree.compareWith(pokerHandWithPair));
+        assertEquals(Result.Tie,pokerHandWithPair.compareWith(pokerHandWithPair));
+        assertEquals(Result.Loss,pokerHandWithThree.compareWith(pokerHandWithPoker));
+
+
+    }
 }

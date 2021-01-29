@@ -20,8 +20,8 @@ public class Card {
         return numValue+figure;
     }
 
-    public boolean equals(Card cardEqual){
-        if( cardEqual.getFigure().equals(figure) && cardEqual.getNumValue().equals(numValue)) return true;
+    public boolean equalsValue(Card cardEqual){
+        if(cardEqual.getNumValue().equals(numValue)) return true;
         return false;
     }
 }

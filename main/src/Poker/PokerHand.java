@@ -20,6 +20,7 @@ public class PokerHand {
         return cards;
     }
 
+
     public String toString(){
         String res="";
         for(Card card:cards){
@@ -33,7 +34,7 @@ public class PokerHand {
 
         for(int i = 0; i< cards.size();i++){
             for(int j = i+1;j<cards.size();j++){
-                if(cards.get(i).getNumValue().equals(cards.get(j).getNumValue())){
+                if(cards.get(i).equalsValue(cards.get(j))){
                     sameNumber++;
 
                     break;
@@ -65,7 +66,9 @@ public class PokerHand {
         return value;
     }
 
-    public boolean compareWith(PokerHand handToCompare){
-        return false;
+    public Result compareWith(PokerHand handToCompare){
+        if(value.ordinal()<handToCompare.getValue().ordinal())return Result.Loss;
+        if(value.ordinal()>handToCompare.getValue().ordinal())return Result.Win;
+        return Result.Tie;
     }
 }
