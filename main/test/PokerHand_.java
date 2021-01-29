@@ -1,5 +1,6 @@
 import Poker.Card;
 import Poker.PokerHand;
+import Poker.Values;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,9 +31,9 @@ public class PokerHand_ {
 
     @Test
     public void comprobeValue(){
-        assertEquals(2,pokerHandWithPair.getValue());
-        assertEquals(3,pokerHandWithThree.getValue());
-        assertEquals(4,pokerHandWithPoker.getValue());
+        assertEquals(Values.TWO,pokerHandWithPair.getValue());
+        assertEquals(Values.THREE,pokerHandWithThree.getValue());
+        assertEquals(Values.POKER,pokerHandWithPoker.getValue());
 
     }
 

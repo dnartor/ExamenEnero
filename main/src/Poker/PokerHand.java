@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PokerHand {
 
     ArrayList<Card> cards=new ArrayList();
-    int value=1;
+    Values value;
 
     public PokerHand(String cards) {
         String[] cardsString = cards.split(" ");
@@ -30,18 +30,38 @@ public class PokerHand {
 
     public void selfCombination(){
         int sameNumber=1;
+
         for(int i = 0; i< cards.size();i++){
             for(int j = i+1;j<cards.size();j++){
                 if(cards.get(i).getNumValue().equals(cards.get(j).getNumValue())){
                     sameNumber++;
+
                     break;
                 }
             }
         }
-        value=sameNumber;
+        setValue(sameNumber);
+
+
     }
 
-    public int getValue() {
+    private void setValue(int sameNumber) {
+        switch(sameNumber){
+            case 1:
+                value=Values.ONE;
+                break;
+            case 2:
+                value=Values.TWO;
+                break;
+            case 3:
+                value=Values.THREE;
+                break;
+            case 4:
+                value=Values.POKER;
+        }
+    }
+
+    public Values getValue() {
         return value;
     }
 
