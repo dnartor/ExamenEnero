@@ -19,7 +19,6 @@ public class PokerHand {
         }
         selfCombination();
         sameColor=comprobeSameColor();
-        System.out.println(sameColor);
     }
 
     public Boolean getSameColor() {

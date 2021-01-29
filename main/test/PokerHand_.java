@@ -14,7 +14,8 @@ public class PokerHand_ {
     private PokerHand pokerHandWithPair;
     private PokerHand pokerHandWithThree;
     private PokerHand pokerHandWithPoker;
-    private PokerHand pokerHandWithColor;
+    private PokerHand pokerHandWithBlackColor;
+    private PokerHand pokerHandWithRedColor;
 
 
     @Before
@@ -23,7 +24,8 @@ public class PokerHand_ {
         pokerHandWithPair = new PokerHand("KS KH 2S 4D TD");
         pokerHandWithThree = new PokerHand("KS KH 2S KD TD");
         pokerHandWithPoker = new PokerHand("KS KH 2S KD KD");
-        pokerHandWithColor = new PokerHand("KS KC 1S 1C 2S");
+        pokerHandWithBlackColor = new PokerHand("KS KC 1S 1C 2S");
+        pokerHandWithRedColor = new PokerHand("KH KD 1H 1D 2H");
 
     }
     @Test
@@ -48,6 +50,8 @@ public class PokerHand_ {
 
     @Test
     public void comprobeColors(){
-        assertTrue(pokerHandWithColor.getSameColor());
+        assertTrue(pokerHandWithBlackColor.getSameColor());
+        assertTrue(pokerHandWithRedColor.getSameColor());
+
     }
 }
